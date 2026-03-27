@@ -22,3 +22,4 @@
 ## หมายเหตุ
 - อย่าใส่ข้อมูลลับลงใน `index.html`
 - ระบบ backend ใช้ Google Apps Script แยกจาก GitHub Pages
+Last updated
