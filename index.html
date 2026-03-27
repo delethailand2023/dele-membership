@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>สมัครสมาชิก - DELE Thailand</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', 'Sarabun', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 py-12 px-4">
+
+    <div class="max-w-3xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-lg">
+        <div class="text-center mb-8">
+            <img
+                src="https://raw.githubusercontent.com/tanakornp47/DELE-LOGO/refs/heads/main/logo%20dele.jpeg"
+                alt="DELE Thailand Logo"
+                class="mx-auto mb-4 h-20 w-auto"
+                onerror="this.onerror=null;this.src='https://placehold.co/150x80/003366/FFFFFF?text=DELE+Logo';"
+            >
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+                การสมัครสมาชิกสามัญ ของสมาคมการศึกษาดิจิทัลและวิศวกรรมการเรียนรู้
+            </h1>
+            <p class="text-lg text-gray-600 mt-2">
+                Membership Registration Form for DELE Thailand
+            </p>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-6 rounded-lg mb-8">
+            <h2 class="font-bold text-lg mb-2">ค่าใช้จ่ายในการสมัครสมาชิก</h2>
+            <p class="mb-1"><strong class="font-semibold">การสมัครสมาชิกครั้งแรก:</strong> ค่าใช้จ่าย 1,100 บาท***</p>
+            <p><strong class="font-semibold">การสมัครสมาชิกครั้งถัดไป (ต่อปี):</strong> ค่าใช้จ่าย 1,000 บาท***</p>
+        </div>
+
+        <form id="registrationForm" onsubmit="event.preventDefault(); handleSubmit();">
+            <section class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 border-b-2 border-gray-200 pb-3 mb-6">
+                    ส่วนที่ 1: ข้อมูลผู้สมัคร
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
+                            1. ชื่อ (First name) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="firstName" name="firstName" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
+                            2. สกุล (Last name) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="lastName" name="lastName" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="occupation" class="block text-sm font-medium text-gray-700 mb-1">
+                        3. อาชีพ (Occupation)
+                    </label>
+                    <input type="text" id="occupation" name="occupation" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                        4. อีเมล (Email) <span class="text-red-500">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="mb-6">
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                        5. เบอร์โทรศัพท์ (Phone number) <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="mb-6">
+                    <label for="purpose" class="block text-sm font-medium text-gray-700 mb-1">
+                        6. จุดประสงค์ในการสมัครสมาชิก
+                    </label>
+                    <textarea id="purpose" name="purpose" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 border-b-2 border-gray-200 pb-3 mb-6">
+                    ส่วนที่ 2: ที่อยู่สำหรับติดต่อ
+                </h2>
+
+                <div class="mb-6">
+                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1">
+                        7. ที่อยู่ (Address)
+                    </label>
+                    <textarea id="address" name="address" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <label for="city" class="block text-sm font-medium text-gray-700 mb-1">
+                            8. อำเภอ/เมือง
+                        </label>
+                        <input type="text" id="city" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="state" class="block text-sm font-medium text-gray-700 mb-1">
+                            9. จังหวัด
+                        </label>
+                        <input type="text" id="state" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="zipcode" class="block text-sm font-medium text-gray-700 mb-1">
+                            10. รหัสไปรษณีย์
+                        </label>
+                        <input type="text" id="zipcode" name="zipcode" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 border-b-2 border-gray-200 pb-3 mb-6">
+                    ส่วนที่ 3: เอกสารประกอบ
+                </h2>
+
+                <div class="mb-6">
+                    <label for="photo" class="block text-sm font-medium text-gray-700 mb-1">
+                        11. รูปผู้สมัคร <span class="text-red-500">*</span>
+                    </label>
+                    <input type="file" id="photo" name="photo" accept="image/*,.pdf" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white">
+                    <p class="text-sm text-gray-500 mt-1">รองรับไฟล์รูปภาพหรือ PDF ขนาดไม่เกิน 5MB</p>
+                </div>
+
+                <div class="mb-6">
+                    <label for="slip" class="block text-sm font-medium text-gray-700 mb-1">
+                        12. สลิปการโอนเงิน <span class="text-red-500">*</span>
+                    </label>
+                    <input type="file" id="slip" name="slip" accept="image/*,.pdf" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white">
+                    <p class="text-sm text-gray-500 mt-1">รองรับไฟล์รูปภาพหรือ PDF ขนาดไม่เกิน 5MB</p>
+                </div>
+            </section>
+
+            <div class="mt-10">
+                <div id="loadingIndicator" class="hidden text-center mb-4">
+                    <p class="text-blue-600 font-medium">กำลังส่งข้อมูล กรุณารอสักครู่...</p>
+                </div>
+
+                <div id="messageBox" class="hidden p-4 rounded-md mb-4 text-center"></div>
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400"
+                >
+                    ยืนยันการสมัครสมาชิก
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxUXOVspacUYqvelbzn_mRNvbocgOkw9vMyk8NXveaR8DIYYqe75QdoicM_5kVN1ksg/exec";
+        const MAX_FILE_SIZE = 5 * 1024 * 1024;
+        const ALLOWED_MIME_TYPES = [
+            "image/jpeg",
+            "image/png",
+            "image/jpg",
+            "image/webp",
+            "application/pdf"
+        ];
+
+        function showMessage(message, isError = false) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = message;
+            messageBox.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            messageBox.classList.add(isError ? 'bg-red-100' : 'bg-green-100');
+            messageBox.classList.add(isError ? 'text-red-800' : 'text-green-800');
+        }
+
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+            });
+        }
+
+        function validateFile(file, label) {
+            if (!file) {
+                showMessage(`กรุณาอัปโหลด${label}`, true);
+                return false;
+            }
+
+            if (file.size > MAX_FILE_SIZE) {
+                showMessage(`${label}ต้องมีขนาดไม่เกิน 5MB`, true);
+                return false;
+            }
+
+            if (!ALLOWED_MIME_TYPES.includes(file.type)) {
+                showMessage(`${label}ต้องเป็นไฟล์รูปภาพหรือ PDF เท่านั้น`, true);
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateForm() {
+            const requiredFields = [
+                { id: 'firstName', label: 'ชื่อ' },
+                { id: 'lastName', label: 'สกุล' },
+                { id: 'email', label: 'อีเมล' },
+                { id: 'phone', label: 'เบอร์โทรศัพท์' }
+            ];
+
+            for (const field of requiredFields) {
+                const el = document.getElementById(field.id);
+                if (!el.value.trim()) {
+                    showMessage(`กรุณากรอก${field.label}`, true);
+                    el.focus();
+                    return false;
+                }
+            }
+
+            const email = document.getElementById('email').value.trim();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('กรุณากรอกอีเมลให้ถูกต้อง', true);
+                document.getElementById('email').focus();
+                return false;
+            }
+
+            const phone = document.getElementById('phone').value.trim();
+            if (!/^[0-9+\-\s()]{8,20}$/.test(phone)) {
+                showMessage('กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง', true);
+                document.getElementById('phone').focus();
+                return false;
+            }
+
+            const zipcode = document.getElementById('zipcode').value.trim();
+            if (zipcode && !/^[0-9]{5}$/.test(zipcode)) {
+                showMessage('กรุณากรอกรหัสไปรษณีย์ให้ถูกต้อง', true);
+                document.getElementById('zipcode').focus();
+                return false;
+            }
+
+            const photoFile = document.getElementById('photo').files[0];
+            const slipFile = document.getElementById('slip').files[0];
+
+            if (!validateFile(photoFile, 'รูปผู้สมัคร')) return false;
+            if (!validateFile(slipFile, 'สลิปการโอนเงิน')) return false;
+
+            return true;
+        }
+
+        function resetForm() {
+            document.getElementById('registrationForm').reset();
+        }
+
+        async function handleSubmit() {
+            const submitButton = document.getElementById('submitButton');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const messageBox = document.getElementById('messageBox');
+
+            messageBox.classList.add('hidden');
+
+            if (!validateForm()) return;
+
+            submitButton.disabled = true;
+            loadingIndicator.classList.remove('hidden');
+
+            try {
+                const photoFile = document.getElementById('photo').files[0];
+                const slipFile = document.getElementById('slip').files[0];
+
+                const [photoBase64, slipBase64] = await Promise.all([
+                    fileToBase64(photoFile),
+                    fileToBase64(slipFile)
+                ]);
+
+                const formData = {
+                    timestamp: new Date().toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' }),
+                    firstName: document.getElementById('firstName').value.trim(),
+                    lastName: document.getElementById('lastName').value.trim(),
+                    occupation: document.getElementById('occupation').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    purpose: document.getElementById('purpose').value.trim(),
+                    address: document.getElementById('address').value.trim(),
+                    city: document.getElementById('city').value.trim(),
+                    state: document.getElementById('state').value.trim(),
+                    zipcode: document.getElementById('zipcode').value.trim(),
+                    photo: {
+                        filename: photoFile.name,
+                        mimeType: photoFile.type,
+                        data: photoBase64.split(',')[1]
+                    },
+                    slip: {
+                        filename: slipFile.name,
+                        mimeType: slipFile.type,
+                        data: slipBase64.split(',')[1]
+                    }
+                };
+
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    showMessage('สมัครสมาชิกสำเร็จ! ระบบได้รับข้อมูลของคุณแล้ว', false);
+                    resetForm();
+                } else {
+                    showMessage(result.message || 'เกิดข้อผิดพลาดในการสมัครสมาชิก', true);
+                }
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                showMessage(`เกิดข้อผิดพลาดในการส่งข้อมูล: ${error.message}`, true);
+            } finally {
+                submitButton.disabled = false;
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
